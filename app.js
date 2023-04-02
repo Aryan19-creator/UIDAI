@@ -23,12 +23,15 @@ const reviewRoutes = require('./routes/reviews');
 
 
 mongoose.set('strictQuery', false);
-mongoose.connect('mongodb://localhost:27017/yelp-camp', {
+mongoose.connect(
+  "mongodb+srv://aryan:Aryan_19@cluster0.0wyhglz.mongodb.net/?retryWrites=true&w=majority",
+  {
     useNewUrlParser: true,
     // useCreateIndex: true,
     useUnifiedTopology: true,
     // useFindAndModify: false
-});
+  }
+);
 
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
